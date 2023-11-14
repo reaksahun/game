@@ -1,10 +1,12 @@
 
 package game;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
-public class Room {
-	private String description;
+public class Room implements Serializable{
+	
+	//private String description;
 	private Room east;
 	private Room west;
 	private Room north;
@@ -13,18 +15,29 @@ public class Room {
 	private Room down;
 	private boolean locked; //is the room locked?
 	private String name;
+	private String roomID;
+	
 	
 	private HashMap<String, Item> roomItems; 
 	
-	public Room(String n,String d) {
-		description = d;
+	public Room(String n) {
+		//description = d;
 		locked = false;
 		name = n;
+		roomID = n;
 		roomItems = new HashMap<String, Item>();
+		World.rooms.put(name, this); // Room object places itself in the map
 	}
 	public String getName(){
 		return name;
 	}
+	
+	
+	public void setRoomID(String id) {
+		roomID = id;
+		
+	}
+	
 	public void addItem(Item i) {
 		roomItems.put(i.getName(), i);
 	}
@@ -88,9 +101,14 @@ public class Room {
 		}
 	}
 	
+	public String getDesc() {
+		return Game.roomDesc.get(roomID);
+	}
+	
+	
 	
 	public String toString() {
-		return description;
+		return getDesc();
 	}
 	
 }

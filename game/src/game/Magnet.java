@@ -10,14 +10,13 @@ public class Magnet extends Item {
 				System.out.println("There is no longer anything in the sink");
 			}else {
 				System.out.println("You use the magnet in the sink drain"
-						+ "and you pull out a ring. You put the ring in your pocket");
-				Item ring = new Item("ring");
-				ring.setDesc("Women's diamond ring");
-				Game.getCurrentRoom().addItem(ring);
-				Game.collectItem("ring");
+						+ "and the magnet pulls out a yellowKey");
+				Item yellowKey = new yellowKey();
+				yellowKey.setDesc("Small yellow key");
+				Game.getCurrentRoom().addItem(yellowKey);
 				setUsed(true);
 			}
-		
+			
 		}else
 			System.out.println("the magnet isnt gonna stick silly");
 	}
