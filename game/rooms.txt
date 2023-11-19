@@ -1,5 +1,8 @@
 Living Room
-The living room is big. There is a door east that leads to the kitchen, or west that leads into the garage. Or you can go upstairs to the second floor.
+The living room is big, there is a cute puppy sitting in here. You see money on the living room table. There is a door east that leads to the kitchen, or west that leads into the garage. Or you can go upstairs to the second floor. 
+#
+Living Room_A
+The living room is big, there is a cute puppy sitting in here. There is a door east that leads to the kitchen, or west that leads into the garage. Or you can go upstairs to the second floor. 
 #
 Kitchen
 Big clean kitchen. There is a redKey on the kitchen island and the sink seems to have just been used. There is a door south, and a door north that leads to the backyard. There is a door that leads to the basement but it is locked.
@@ -41,10 +44,10 @@ Your Room_A
 The coolest room in history! You can stay in this room and never leave the comfort of your own room, or east back to the top of the stairs.
 #
 Sis Room
-You sister's room is filled with posters of a British singing boy band. You notice a record player in the corner on her night stand. You get the creeps just being in this room, you can go west back into the hallway.
+You sister's room is filled with posters of a British singing boy band. Your sister is in her bed. You notice a record player in the corner on her night stand. You get the creeps just being in this room, you can go west back into the hallway.
 #
 Sis Room_A
-Your sisters room is filled with posters of a British singing boy band. The record player is now blasting horrible music. You get the creeps just being in this room, you can go back west into the hallway. 
+Your sisters room is filled with posters of a British singing boy band. Your sister is in her bed. The record player is now blasting horrible music. You get the creeps just being in this room, you can go back west into the hallway. 
 #
 Garage
 You're in your Garage. Nothing but old junk and holiday decorations. Your car is parked in here. 

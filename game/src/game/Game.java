@@ -17,7 +17,7 @@ public class Game {
 	private static Room currentRoom;
 	public static ArrayList<Item> inventory = new ArrayList<Item>();
 	public static HashMap<String, String> roomDesc = new HashMap<String, String>();
-	
+	public static Scanner scan = new Scanner(System.in);
 	
 	
 	public static void main(String[] args) {
@@ -25,7 +25,6 @@ public class Game {
 				+ "in your class but you misplaced your keys. Your job is to find the keys and make it to the party"
 				+ "or else you will be a big LOSER!");
 		System.out.println(" ");
-		Scanner scan = new Scanner(System.in);
 		String playerCommand;
 		currentRoom = World.buildWorld();
 		Game.populateMap();
@@ -37,8 +36,6 @@ public class Game {
 			String item;
 			a = playerCommand.split(" ");
 			playerCommand = a[0];
-//			currentRoom = World.buildWorld();
-//			System.out.println(currentRoom);
 			if (playerCommand.equals("i")) {
 				if (inventory.isEmpty()) {
 					System.out.println("you are carrying nothing");
@@ -73,22 +70,40 @@ public class Game {
 				if(i == null) {
 					System.out.println("You dont have the " + a[1]);
 				}else { 
-					//Item i = getItem(x);
 					i.use();
 					
 				}
 				
 			}else if(playerCommand.equals("look")) {
-				Item y = getItem(a[2]);	
+				Item y = getItem(a[1]);	
+				NPC p = currentRoom.getNPC(a[1]);
+
 				if (y == null) {
-					y = currentRoom.getItem(a[2]);
+					y = currentRoom.getItem(a[1]);
 				}
 				if( y == null) {
-					System.out.println("There is no " + a[2] + "!");
+					System.out.println("There is no " + a[1] + "!");
+				} else {
+					y.look();
 				}
 				
-				else {
-					y.look();
+				if (p == null) {
+					p = currentRoom.getNPC(a[1]);
+				}
+				if( p == null) {
+					System.out.println("There is no " + a[1] + "!");
+				}else {
+					p.look();
+				}
+				
+			}else if(playerCommand.equals("talk")) {
+				
+				NPC npc = currentRoom.getNPC(a[1]);
+				if(npc == null) {
+					System.out.println("There is no "+ a[1]);
+					
+				}else {
+					npc.talk();
 				}
 			}else if(playerCommand.equals("load")) {
 				loadGame();
@@ -112,15 +127,21 @@ public class Game {
 	
 	public static void removeItem(String name) {
 		
-		int index = 0;
+		int index = -1;
 		for(int i=0; i<inventory.size(); i++) {
 			Item x = inventory.get(i);
 			if(x.getName().equals(name)) {
 				index = i;
 			}
 		}
-		inventory.remove(index);
+		if( index == -1) {
+			System.out.println("item is not there");
+			
+		}else {
+			inventory.remove(index);
+		}
 	}
+	
 	public static Room getCurrentRoom() {
 		return currentRoom;
 	}
@@ -147,6 +168,9 @@ public class Game {
 	public static void collectItem(String name) {
 		if(currentRoom.hasItem(name)) {
 			inventory.add(currentRoom.removeItem(name));
+		}
+		else {
+			System.out.println("Nothing there");
 		}
 	}
 	
@@ -182,6 +206,7 @@ public class Game {
 			
 		}
 	}
+	
 	
 	public static void loadGame() {	
 			try {
