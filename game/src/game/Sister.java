@@ -5,7 +5,16 @@ public class Sister extends NPC{
 		public Sister() {
 			super("sister","short bratty teenager");
 			
-	}
+		}
+		
+		public void give(Item i) {
+			if(i.getName().equals("treat")) {
+				Game.print("Do I look like a dog to you? Get that out of my face");
+			}else {
+				Game.print("Are you stupid what am I gonna do with that");
+			}
+			
+		}
 		
 		int time = 1;
 		int c = 1;

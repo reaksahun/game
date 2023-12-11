@@ -18,7 +18,7 @@ public class Shovel extends Item{
 				Game.getCurrentRoom().setRoomID("Backyard_A");
 			}
 		}else 
-			System.out.println("You can't dig though anything here");		
+			Game.print("You can't dig though anything here");		
 	}
 }
 	

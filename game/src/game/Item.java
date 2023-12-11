@@ -48,7 +48,7 @@ public class Item implements Serializable {
 	}
 	
 	public void look() {
-		System.out.println(desc);
+		Game.print(desc);
 	}
 	
 	public boolean isUsed() {
@@ -65,10 +65,10 @@ public class Item implements Serializable {
 	
 	public void take() {
 		if(heavy) {
-			System.out.println("That's too heavy to carry around");
+			Game.print("That's too heavy to carry around");
 		}else {
 			Game.inventory.add(Game.getCurrentRoom().removeItem(name));
-			System.out.println("You picked up "+ name + ".");
+			Game.print("You picked up "+ name + ".");
 		}
 		
 	}

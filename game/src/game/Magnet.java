@@ -7,9 +7,9 @@ public class Magnet extends Item {
 	public void use() {
 		if(Game.getCurrentRoom().getName().equals("Kitchen")) {
 			if(isUsed()) {
-				System.out.println("There is no longer anything in the sink");
+				Game.print("There is no longer anything in the sink");
 			}else {
-				System.out.println("You use the magnet in the sink drain"
+				Game.print("You use the magnet in the sink drain"
 						+ "and the magnet pulls out a yellowKey");
 				Item yellowKey = new yellowKey();
 				yellowKey.setDesc("Small yellow key");
@@ -18,7 +18,7 @@ public class Magnet extends Item {
 			}
 			
 		}else
-			System.out.println("the magnet isnt gonna stick silly");
+			Game.print("the magnet isnt gonna stick silly");
 	}
 }
 

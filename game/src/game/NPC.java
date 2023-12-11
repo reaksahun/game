@@ -1,6 +1,8 @@
 package game;
 
-public class NPC {
+import java.io.Serializable;
+
+public class NPC implements Serializable {
 
 	private String name;
 	private String desc;
@@ -16,6 +18,10 @@ public class NPC {
 	
 	public String getName() {
 		return name;
+	}
+	
+	public void give(Item i) {
+		Game.print("You are't carrying it");
 	}
 	
 	public void setDesc(String desc) {
@@ -37,6 +43,8 @@ public class NPC {
 	public void say(String dialog) {
 		Game.print(name+": "+dialog);
 	}
+	
+
 	
 	
 	//display options to player

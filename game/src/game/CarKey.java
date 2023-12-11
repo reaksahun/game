@@ -12,12 +12,9 @@ public class CarKey extends Item{
 	
 	public void use() {
 		if(Game.getCurrentRoom().getName().equals("Garage")) {
-			if(isUsed()) {
-				System.out.println("The car is already open");
-			}
-			System.out.println("You insert the car keys into the car and you get in. You drive off into the sunset and make it to the party!!!");
+			Game.print("You insert the car keys into the car and you get in. You drive off into the sunset and make it to the party!!!");
 		}else {
-			System.out.println("Not the right place for these");
+			Game.print("Not the right place for these");
 		}
 	}
 }

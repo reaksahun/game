@@ -15,15 +15,15 @@ public class blueKey extends Item{
 	public void use() {
 		if(Game.getCurrentRoom().getName().equals("Stairs")) {
 			if(isUsed()) {
-				System.out.println("the chest is already opened");
+				Game.print("the chest is already opened");
 			}else {
-				System.out.println("The key fits into the chest! You open the chest and find a lightBulb inside");
+				Game.print("The key fits into the chest! You open the chest and find a lightBulb inside");
 				Item lightbulb = new lightBulb();
 				lightbulb.setDesc("Sparkly!");
 				Game.getCurrentRoom().addItem(lightbulb);
 				setUsed(true);
 			}
 		}else 
-			System.out.println("The key doesn't fit any lock in this room");		
+			Game.print("The key doesn't fit any lock in this room");		
 	}
 }

@@ -14,9 +14,9 @@ public class Vinyl extends Item {
 	public void use() {
 	if(Game.getCurrentRoom().getName().equals("Sis Room")) {
 		if(isUsed()) {
-			System.out.println("Record player was already open");
+			Game.print("Record player was already open");
 		}else {
-			System.out.println("The correct vinyl was put in, music starts to play and the record"
+			Game.print("The correct vinyl was put in, music starts to play and the record"
 					+ "player opens. Inside is a magnet");
 			Item magnet = new Magnet();
 			magnet.setDesc("very strong long magnet");
@@ -26,7 +26,7 @@ public class Vinyl extends Item {
 			Game.getCurrentRoom().setRoomID("Sis Room_A");
 		}
 	}else 
-		System.out.println("The vinyl cant be used here");		
+		Game.print("The vinyl cant be used here");		
 
 	}
 }

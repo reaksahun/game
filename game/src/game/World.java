@@ -30,15 +30,19 @@ public class World {
 	Item sink = new Item("sink");
 	Item car = new Item("car");
 	Item money = new Money();
+	Item treat = new Item("treat");
+	
 	 
 	livingRoom.addExit(kitchen, 'e');
 	livingRoom.addExit(garage, 'w');
+	livingRoom.addNPC(new Dad());
 	livingRoom.addItem(money);
 	livingRoom.addNPC(new Puppy());
 	garage.addExit(livingRoom, 'e');
 	kitchen.addExit(livingRoom, 'w');
 	kitchen.addExit(basement,'d');
 	kitchen.addItem(sink);
+	kitchen.addItem(treat);
 	kitchen.addItem(redKey);
 	redKey.setDesc("small red key");
 	backyard.addExit(kitchen, 's');
