@@ -11,7 +11,7 @@ public class Shovel extends Item{
 			if(isUsed()) {
 				Game.print("Already been dug up");
 			}else {
-				System.out.println("You start digging the hold that your dog dug, and at the bottom of the hole are your carKey's!");
+				Game.print("You start digging the hold that your dog dug, and at the bottom of the hole are your carKey's!");
 				Item carKey = new CarKey();
 				carKey.setDesc("Keys to your beautiful ride");
 				Game.getCurrentRoom().addItem(carKey);

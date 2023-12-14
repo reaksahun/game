@@ -6,6 +6,7 @@ public class NPC implements Serializable {
 
 	private String name;
 	private String desc;
+	private boolean convo;
 	
 	public NPC(String name) {
 		this.name = name;
@@ -14,6 +15,7 @@ public class NPC implements Serializable {
 	public NPC(String name, String desc) {
 		this.name = name;
 		this.desc = desc;
+		convo = false;
 	}
 	
 	public String getName() {
@@ -36,13 +38,18 @@ public class NPC implements Serializable {
 		Game.print("You can't talk to " +name);
 	}
 	
-	public void response(int option) {
+	public void response(String option) {
 		
 	}
 	
 	public void say(String dialog) {
 		Game.print(name+": "+dialog);
 	}
+	
+	public void setConvo(boolean c) {
+		convo = c;
+	}
+	
 	
 
 	
@@ -57,8 +64,8 @@ public class NPC implements Serializable {
 			Game.print("Options "+(i+1)+": "+options[i]);
 		}
 		Game.print("Enter an otpions (1-"+options.length+")");
-		int choice = Game.scan.nextInt();
-		Game.scan.nextLine(); //flush input buffer
-		response(choice);
+		//int choice = Game.scan.nextInt();
+		//Game.scan.nextLine(); //flush input buffer
+		//response(choice);
 	}
 }

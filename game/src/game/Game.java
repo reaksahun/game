@@ -41,6 +41,8 @@ public class Game {
 		}return null;
 	}
 	
+	
+	
 	public static void removeItem(String name) {
 		
 		int index = -1;
@@ -85,6 +87,8 @@ public class Game {
 		gui.print(message.toString());
 		//System.out.print(message+"\n");
 	}
+	
+	public static NPC n;
 	
 	public static void processCommand(String playerCommand) {
 		//do {
@@ -145,8 +149,8 @@ public class Game {
 				}
 				
 			}else if(playerCommand.equals("look")) {
+				
 				Item y = getItem(a[1]);	
-				NPC p = currentRoom.getNPC(a[1]);
 				
 				if (y == null) {
 					y = currentRoom.getItem(a[1]);
@@ -156,7 +160,9 @@ public class Game {
 				} else {
 					y.look();
 				}
+			} else if(playerCommand.equals("examine")) {
 				
+				NPC p = currentRoom.getNPC(a[1]);
 				if (p == null) {
 					p = currentRoom.getNPC(a[1]);
 				}
@@ -168,12 +174,14 @@ public class Game {
 				
 			}else if(playerCommand.equals("talk")) {
 				
+				
 				NPC npc = currentRoom.getNPC(a[1]);
 				if(npc == null) {
 					Game.print("There is no "+ a[1]);
 					
 				}else {
 					npc.talk();
+					n = currentRoom.getNPC(a[1]);			
 				}
 			}else if(playerCommand.equals("load")) {
 				loadGame();

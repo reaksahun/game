@@ -22,5 +22,4 @@ public class redKey extends Item{
 		}
 	}
 	
-	
 }
